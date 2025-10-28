@@ -1,0 +1,35 @@
+{
+  "id": "coach-001",
+  "name": "Mohamadou",
+  "email": "mohamadou@cmdfootball.com",
+  "role": "Head Coach",
+  "federationId": "FED-001",
+  "teams": [
+    {
+      "id": 101,
+      "name": "CMD U14",
+      "region": "Saskatchewan",
+      "season": "2025-2026"
+    },
+    {
+      "id": 102,
+      "name": "CMD U12",
+      "region": "Saskatchewan",
+      "season": "2025-2026"
+    }
+  ],
+  "permissions": {
+    "canEditPlayers": true,
+    "canGenerateReports": true,
+    "canAssignBadges": true,
+    "canPublishWeekly": true
+  },
+  "preferences": {
+    "dashboardView": "effort-first",
+    "reportFormat": ["csv", "pdf"],
+    "timezone": "America/Regina",
+    "language": "en"
+  },
+  "lastLogin": "2025-10-19T21:45:00",
+  "status": "active"
+}
