@@ -12,4 +12,9 @@ public class ServerController {
     public String ping() {
         return "CMD Football backend is alive!";
     }
+
+    @GetMapping("/")
+    public String home() {
+        return "CMD Football backend is alive!";
+    }
 }
