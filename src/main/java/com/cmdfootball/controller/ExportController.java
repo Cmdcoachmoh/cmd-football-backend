@@ -28,7 +28,7 @@ public class ExportController {
             new Player("Ali", "Midfielder", 92),
             new Player("Sara", "Forward", 88)
         );
-        return new Team("team-001", "U14 Elite", players);
+        return new Team(null, "team-001", "U14 Elite", players);
     }
 
     @GetMapping("/csv")

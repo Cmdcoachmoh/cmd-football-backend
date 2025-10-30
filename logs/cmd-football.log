@@ -31,3 +31,40 @@
 2025-10-29T17:21:34.698-07:00  INFO 2936 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-10-29T17:21:34.701-07:00  INFO 2936 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-10-29T17:21:34.701-07:00  INFO 2936 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-29T19:38:20.746-07:00  INFO 32888 --- [restartedMain] com.cmdfootball.CmdFootballApplication   : Starting CmdFootballApplication using Java 17.0.16 with PID 32888 (D:\cmd-football-site\cmd-football-backend\target\classes started by Coachmohamadou in D:\cmd-football-site\cmd-football-backend)
+2025-10-29T19:38:20.746-07:00  INFO 32888 --- [restartedMain] com.cmdfootball.CmdFootballApplication   : The following 1 profile is active: "prod"
+2025-10-29T19:38:20.806-07:00  INFO 32888 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-29T19:38:20.806-07:00  INFO 32888 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-29T19:38:21.449-07:00  INFO 32888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-29T19:38:21.480-07:00  INFO 32888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 JPA repository interfaces.
+2025-10-29T19:38:22.256-07:00  INFO 32888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-10-29T19:38:22.274-07:00  INFO 32888 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-29T19:38:22.274-07:00  INFO 32888 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-10-29T19:38:22.367-07:00  INFO 32888 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-29T19:38:22.367-07:00  INFO 32888 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1561 ms
+2025-10-29T19:38:22.398-07:00  INFO 32888 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-29T19:38:22.620-07:00  INFO 32888 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:1919cc9c-2076-452f-a4cc-9b4f2bacb3ed user=SA
+2025-10-29T19:38:22.620-07:00  INFO 32888 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-29T19:38:22.636-07:00  INFO 32888 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:1919cc9c-2076-452f-a4cc-9b4f2bacb3ed'
+2025-10-29T19:38:22.747-07:00  INFO 32888 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-29T19:38:22.827-07:00  INFO 32888 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2025-10-29T19:38:22.827-07:00  INFO 32888 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2025-10-29T19:38:23.129-07:00  INFO 32888 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-29T19:38:23.177-07:00  WARN 32888 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 2.1.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 10.0.0. Check the community dialects project for available legacy versions.
+2025-10-29T19:38:23.177-07:00  WARN 32888 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-29T19:38:23.542-07:00  INFO 32888 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-29T19:38:23.542-07:00  INFO 32888 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-29T19:38:23.622-07:00  WARN 32888 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-29T19:38:23.811-07:00  INFO 32888 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2025-10-29T19:38:24.050-07:00  INFO 32888 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-29T19:38:24.098-07:00  INFO 32888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-29T19:38:24.098-07:00  INFO 32888 --- [restartedMain] com.cmdfootball.CmdFootballApplication   : Started CmdFootballApplication in 3.813 seconds (process running for 4.321)
+2025-10-29T19:38:24.098-07:00  INFO 32888 --- [restartedMain] com.cmdfootball.CmdFootballApplication   : ? CMD Football backend is up and running on port 8080 [prod]
+2025-10-29T19:38:42.065-07:00  INFO 32888 --- [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-29T19:38:42.065-07:00  INFO 32888 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-29T19:38:42.065-07:00  INFO 32888 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-10-29T19:52:04.637-07:00  INFO 32888 --- [Thread-7] com.cmdfootball.CmdFootballApplication   : ? CMD Football backend is shutting down gracefully...
+2025-10-29T19:52:04.692-07:00  INFO 32888 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-29T19:52:04.914-07:00  WARN 32888 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2025-10-29T19:52:04.914-07:00  INFO 32888 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-29T19:52:04.914-07:00  INFO 32888 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

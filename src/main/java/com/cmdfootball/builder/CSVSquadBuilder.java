@@ -1,4 +1,4 @@
-package com.cmdfootball.util;
+package com.cmdfootball.builder;
 
 import com.cmdfootball.model.Player;
 

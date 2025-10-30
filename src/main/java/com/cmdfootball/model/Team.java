@@ -1,6 +1,6 @@
 package com.cmdfootball.model;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
@@ -8,37 +8,20 @@ public class Team {
     private Long id;
     private String name;
     private String coach;
-    private List<Player> players;
+    private List<Player> players = new ArrayList<>();
     private double averageEffortScore;
 
-    // Default constructor
+    // 🔹 Constructors
     public Team() {}
 
-    // Full constructor
     public Team(Long id, String name, String coach, List<Player> players) {
         this.id = id;
         this.name = name;
         this.coach = coach;
-        this.players = players;
-        this.averageEffortScore = calculateAverageEffort(players);
+        setPlayers(players); // ensures effort score is calculated safely
     }
 
-    // Convenience constructor (no ID, no coach)
-    public Team(String name, List<Player> players) {
-        this.name = name;
-        this.players = players;
-        this.averageEffortScore = calculateAverageEffort(players);
-    }
-
-    // Convenience constructor (with coach, no ID)
-    public Team(String name, String coach, List<Player> players) {
-        this.name = name;
-        this.coach = coach;
-        this.players = players;
-        this.averageEffortScore = calculateAverageEffort(players);
-    }
-
-    // Getters and Setters
+    // 🔹 Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -48,30 +31,19 @@ public class Team {
     public String getCoach() { return coach; }
     public void setCoach(String coach) { this.coach = coach; }
 
-    public List<Player> getPlayers() {
-        return players != null ? players : Collections.emptyList();
-    }
-
+    public List<Player> getPlayers() { return players; }
     public void setPlayers(List<Player> players) {
-        this.players = players;
-        this.averageEffortScore = calculateAverageEffort(players);
+        this.players = (players != null) ? players : new ArrayList<>();
+        this.averageEffortScore = calculateAverageEffort(this.players);
     }
 
     public double getAverageEffortScore() { return averageEffortScore; }
-    public void setAverageEffortScore(double score) { this.averageEffortScore = score; }
 
-    // Utility method
+    // 🔹 Utility method
     private double calculateAverageEffort(List<Player> players) {
-        if (players == null || players.isEmpty()) return 0.0;
         return players.stream()
                       .mapToDouble(Player::getEffortScore)
                       .average()
                       .orElse(0.0);
-    }
-
-    // Optional: for logging/debugging
-    @Override
-    public String toString() {
-        return "Team{name='" + name + "', coach='" + coach + "', avgEffort=" + averageEffortScore + "}";
     }
 }
