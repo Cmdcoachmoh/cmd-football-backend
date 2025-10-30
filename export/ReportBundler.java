@@ -1,7 +1,9 @@
-package com.cmdfootball.util;
+package com.cmdfootball.export;
 
 import com.cmdfootball.model.Team;
 import com.cmdfootball.model.Player;
+import com.cmdfootball.service.CSVExporter;
+import com.cmdfootball.service.PDFReportGenerator;
 
 import com.itextpdf.text.DocumentException;
 
@@ -23,25 +25,20 @@ public class ReportBundler {
      * @throws DocumentException if PDF generation fails
      */
     public static byte[] bundleTeamReports(Team team) throws IOException, DocumentException {
-        ByteArrayOutputStream zipStream = new ByteArrayOutputStream();
-        ZipOutputStream zipOut = new ZipOutputStream(zipStream);
+        try (ByteArrayOutputStream zipStream = new ByteArrayOutputStream();
+             ZipOutputStream zipOut = new ZipOutputStream(zipStream)) {
 
-        // CSV report
-        String csv = CSVExporter.exportPlayers(team.getPlayers());
-        zipOut.putNextEntry(new ZipEntry("squad.csv"));
-        zipOut.write(csv.getBytes(StandardCharsets.UTF_8));
-        zipOut.closeEntry();
+            // CSV report
+            String csv = CSVExporter.exportPlayers(team.getPlayers());
+            addZipEntry(zipOut, "squad.csv", csv.getBytes(StandardCharsets.UTF_8));
 
-        // PDF report
-        byte[] pdf = PDFReportGenerator.generateTeamReport(team);
-        zipOut.putNextEntry(new ZipEntry("report.pdf"));
-        zipOut.write(pdf);
-        zipOut.closeEntry();
+            // PDF report
+            byte[] pdf = PDFReportGenerator.generateTeamReport(team);
+            addZipEntry(zipOut, "report.pdf", pdf);
 
-        zipOut.finish();
-        zipOut.close();
-
-        return zipStream.toByteArray();
+            zipOut.finish();
+            return zipStream.toByteArray();
+        }
     }
 
     /**
@@ -52,20 +49,24 @@ public class ReportBundler {
      * @throws IOException if bundling fails
      */
     public static byte[] bundleTeamSummaries(List<Team> teams) throws IOException {
-        ByteArrayOutputStream zipStream = new ByteArrayOutputStream();
-        ZipOutputStream zipOut = new ZipOutputStream(zipStream);
+        try (ByteArrayOutputStream zipStream = new ByteArrayOutputStream();
+             ZipOutputStream zipOut = new ZipOutputStream(zipStream)) {
 
-        for (Team team : teams) {
-            String csv = CSVExporter.exportPlayers(team.getPlayers());
-            String filename = "team_" + team.getId() + "_" + team.getName().replaceAll("\\s+", "_") + ".csv";
-            zipOut.putNextEntry(new ZipEntry(filename));
-            zipOut.write(csv.getBytes(StandardCharsets.UTF_8));
-            zipOut.closeEntry();
+            for (Team team : teams) {
+                String csv = CSVExporter.exportPlayers(team.getPlayers());
+                String filename = "team_" + team.getId() + "_" + team.getName().replaceAll("\\s+", "_") + ".csv";
+                addZipEntry(zipOut, filename, csv.getBytes(StandardCharsets.UTF_8));
+            }
+
+            zipOut.finish();
+            return zipStream.toByteArray();
         }
+    }
 
-        zipOut.finish();
-        zipOut.close();
-
-        return zipStream.toByteArray();
+    // 🔹 Utility method to add entries to ZIP
+    private static void addZipEntry(ZipOutputStream zipOut, String name, byte[] content) throws IOException {
+        zipOut.putNextEntry(new ZipEntry(name));
+        zipOut.write(content);
+        zipOut.closeEntry();
     }
 }

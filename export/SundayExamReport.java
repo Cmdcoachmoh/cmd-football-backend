@@ -1,4 +1,4 @@
-package com.cmdfootball.service;
+package com.cmdfootball.export;
 
 import com.cmdfootball.model.Player;
 import com.cmdfootball.model.DrillAttempt;

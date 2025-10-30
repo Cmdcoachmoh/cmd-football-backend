@@ -1,4 +1,4 @@
-package com.cmdfootball.model;
+package com.cmdfootball.export;
 
 import java.time.LocalDateTime;
 
