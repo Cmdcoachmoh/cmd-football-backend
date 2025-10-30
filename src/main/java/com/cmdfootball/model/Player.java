@@ -11,9 +11,10 @@ public class Player {
     private double effortScore;
     private List<String> badges;
 
-    // Constructors
+    // Default constructor
     public Player() {}
 
+    // Full constructor
     public Player(Long id, String name, String position, int age, double effortScore, List<String> badges) {
         this.id = id;
         this.name = name;
@@ -21,9 +22,14 @@ public class Player {
         this.age = age;
         this.effortScore = effortScore;
         this.badges = badges;
-        
     }
-    
+
+    // Convenience constructor for mock/test data
+    public Player(String name, String position, double effortScore) {
+        this.name = name;
+        this.position = position;
+        this.effortScore = effortScore;
+    }
 
     // Getters and Setters
     public Long getId() { return id; }

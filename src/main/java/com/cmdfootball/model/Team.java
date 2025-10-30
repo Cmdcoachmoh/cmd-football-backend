@@ -1,5 +1,6 @@
 package com.cmdfootball.model;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Team {
@@ -10,11 +11,27 @@ public class Team {
     private List<Player> players;
     private double averageEffortScore;
 
-    // Constructors
+    // Default constructor
     public Team() {}
 
+    // Full constructor
     public Team(Long id, String name, String coach, List<Player> players) {
         this.id = id;
+        this.name = name;
+        this.coach = coach;
+        this.players = players;
+        this.averageEffortScore = calculateAverageEffort(players);
+    }
+
+    // Convenience constructor (no ID, no coach)
+    public Team(String name, List<Player> players) {
+        this.name = name;
+        this.players = players;
+        this.averageEffortScore = calculateAverageEffort(players);
+    }
+
+    // Convenience constructor (with coach, no ID)
+    public Team(String name, String coach, List<Player> players) {
         this.name = name;
         this.coach = coach;
         this.players = players;
@@ -31,13 +48,17 @@ public class Team {
     public String getCoach() { return coach; }
     public void setCoach(String coach) { this.coach = coach; }
 
-    public List<Player> getPlayers() { return players; }
+    public List<Player> getPlayers() {
+        return players != null ? players : Collections.emptyList();
+    }
+
     public void setPlayers(List<Player> players) {
         this.players = players;
         this.averageEffortScore = calculateAverageEffort(players);
     }
 
     public double getAverageEffortScore() { return averageEffortScore; }
+    public void setAverageEffortScore(double score) { this.averageEffortScore = score; }
 
     // Utility method
     private double calculateAverageEffort(List<Player> players) {
@@ -46,5 +67,11 @@ public class Team {
                       .mapToDouble(Player::getEffortScore)
                       .average()
                       .orElse(0.0);
+    }
+
+    // Optional: for logging/debugging
+    @Override
+    public String toString() {
+        return "Team{name='" + name + "', coach='" + coach + "', avgEffort=" + averageEffortScore + "}";
     }
 }
