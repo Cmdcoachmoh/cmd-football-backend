@@ -10,6 +10,9 @@ D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\CmdFootb
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\service\ExportService.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\service\PDFReportGenerator.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\Player.java
+D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\service\SundayExamReport.java
+D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\config\SwaggerConfig.java
+D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\builder\CSVSquadBuilder.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\service\PlayerService.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\SquadBuilder.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\model\Team.java
@@ -18,11 +21,14 @@ D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\service\
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\controller\HealthController.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\ui\login\JugglingLevels.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\auth\LoginManager.java
+D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\config\SecurityConfig.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\controller\ExportController.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\JugglingLevels.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\model\Player.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\ui\dashboard\DashboardUI.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\model\Coach.java
+D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\builder\SquadBuilder.java
+D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\service\AuditLogger.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\ui\RegistryViewer.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\service\CoachLoader.java
 D:\cmd-football-site\cmd-football-backend\src\main\java\com\cmdfootball\controller\PdfExportController.java

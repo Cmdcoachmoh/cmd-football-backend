@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -24,6 +25,8 @@
         <java.version>17</java.version>
         <spring.boot.version>3.1.5</spring.boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Recommended: Define Springdoc version here to be managed globally -->
+        <springdoc.version>2.5.0</springdoc.version> 
     </properties>
 
     <!-- Dependencies -->
@@ -55,7 +58,8 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.6.0</version>
+            <!-- It's better to let dependency management handle this version if possible, but 42.6.0 is fine. -->
+            <version>42.6.0</version> 
         </dependency>
 
         <!-- JSON & PDF -->
@@ -71,10 +75,16 @@
             <version>5.5.13.3</version>
         </dependency>
 
+        <!-- 
+        *** FIX: Updated Springdoc dependency for Spring Boot 3.x (Java 17) ***
+        Replaced: springdoc-openapi-ui (1.7.0) 
+        With: springdoc-openapi-starter-webmvc-ui (2.x) 
+        -->
         <dependency>
-          <groupId>org.springdoc</groupId>
-          <artifactId>springdoc-openapi-ui</artifactId>
-          <version>1.7.0</version>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <!-- Using the property defined above. This is the correct artifact for Spring Boot 3.x -->
+            <version>${springdoc.version}</version> 
         </dependency>
 
         <!-- Devtools -->
@@ -82,6 +92,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
         <!-- Testing -->
