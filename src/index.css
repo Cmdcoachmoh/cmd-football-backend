@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  color: #212529;
+}
+
+h1 {
+  color: #007bff;
+}
+
+button {
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}

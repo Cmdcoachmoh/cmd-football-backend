@@ -1,4 +1,39 @@
-# Ignore logs
-log/
+# ========================
+# CMD Football .gitignore
+# ========================
+
+# --- Logs ---
+logs/
 *.log
 *.gz
+
+# --- Maven Build Artifacts ---
+/target/
+*.class
+*.jar
+*.war
+*.ear
+*.lst
+
+# --- IDE & Editor Files ---
+*.iml
+.idea/
+.vscode/
+*.swp
+*.sublime-workspace
+*.sublime-project
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- Environment & Secrets ---
+.env
+*.key
+*.pem
+
+# --- Exported Reports ---
+/exports/
+*.pdf
+*.csv
+*.zip

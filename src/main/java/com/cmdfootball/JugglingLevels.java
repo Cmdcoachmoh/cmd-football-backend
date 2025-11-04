@@ -32,8 +32,8 @@ public class JugglingLevels {
             case 7: return "Yellow";
             case 8: return "White";
             case 9: return "Pink";
-            case 10:
-            case 11:
+            case 10:return "Black";
+            case 11:return "Purple";
             case 12: return "Lime Green";
             case 13: return "Country Flag";
             default: return "None";

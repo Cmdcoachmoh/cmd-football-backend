@@ -25,18 +25,19 @@ public class SecurityConfig {
                     "/swagger-ui/**", "/v3/api-docs/**",
                     "/css/**", "/js/**", "/images/**"
                 ).permitAll()
-                .anyRequest().authenticated()
+                .requestMatchers("/api/**").authenticated() // ✅ Protect API routes
+                .anyRequest().permitAll()
             )
-            .formLogin()       // ✅ Configure form login
-            .and()             // ✅ Return to HttpSecurity chain
-            .httpBasic();      // ✅ Configure HTTP Basic
+            .formLogin()       // Optional: for browser-based login
+            .and()
+            .httpBasic();      // ✅ Enables Basic Auth for API clients
 
         return http.build();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(); // ✅ Secure password hashing
     }
 
     @Bean
