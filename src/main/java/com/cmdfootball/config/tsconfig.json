@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",                        // ✅ Enables JSX parsing (React 17+)
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,                // ✅ Optional: allows importing .json files
+    "isolatedModules": true,                  // ✅ Required for Vite + TS
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noEmit": true,                           // ✅ Prevents output during type checking
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"],                         // ✅ Ensures only your source files are compiled
+  "exclude": ["node_modules", "dist"]         // ✅ Avoids unnecessary type checking
+}

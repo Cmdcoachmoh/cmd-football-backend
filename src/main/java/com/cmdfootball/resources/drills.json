@@ -1,0 +1,20 @@
+[
+  {
+    "name": "2V1UpDown",
+    "description": "Quick transition drill",
+    "bonus": 3,
+    "malus": 1,
+    "minLevel": 2,
+    "category": "drill",
+    "isTrackable": false
+  },
+  {
+    "name": "TrackFast",
+    "description": "Sprint-based VO₂ test",
+    "bonus": 0,
+    "malus": 8,
+    "minLevel": 0,
+    "category": "fitness",
+    "isTrackable": true
+  }
+]

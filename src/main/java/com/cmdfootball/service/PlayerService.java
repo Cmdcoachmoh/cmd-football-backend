@@ -15,4 +15,9 @@ public class PlayerService {
             new Player(2L, "Lina Kassem", "Forward", 13, 91.2, List.of("Speed", "Finisher"))
         );
     }
+
+    public Player getPlayerById(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPlayerById'");
+    }
 }

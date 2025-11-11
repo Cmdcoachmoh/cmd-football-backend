@@ -1,0 +1,26 @@
+# 🔹 App Identity
+app = "cmd-football"
+primary_region = "yyz" # Toronto (closest to Regina)
+
+# 🔹 Build Configuration
+[build]
+  dockerfile = "Dockerfile"
+
+# 🔹 Environment Variables
+[env]
+  SPRING_PROFILES_ACTIVE = "prod"
+  # DATABASE_URL, JWT_SECRET, etc. can be added here or via `fly secrets set`
+
+# 🔹 HTTP Service Configuration
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+# 🔹 Optional: Add [metrics] block for observability
+# [metrics]
+#   port = 9091
+#   path = "/actuator/prometheus"

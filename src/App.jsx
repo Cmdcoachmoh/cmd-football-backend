@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Landing from "./components/Landing";
-import Dashboard from "./components/Dashboard";
-import DrillBuilder from "./components/DrillBuilder";
-import TeamReport from "./components/TeamReport";
-import ExamEntry from "./components/ExamEntry";
-import PrivateRoute from "./components/PrivateRoute";
-import Dashboard from "./components/Dashboard";
+import Landing from "../../src/components/Landing";
+import Dashboard from "../../src/components/Dashboard";
+import DrillBuilder from "../../src/components/DrillBuilder";
+import TeamReport from "../../src/components/TeamReport";
+import ExamEntry from "../../src/components/ExamEntry";
+import PrivateRoute from "../../src/components/PrivateRoute";
+import Dashboard from "../../src/components/Dashboard";
 
 
 function App() {

@@ -1,0 +1,16 @@
+[
+  { "level": 1, "title": "BasicJuggling", "description": "Foundational juggling control", "category": "juggling", "isTrackable": false },
+  { "level": 2, "title": "ExtInt", "description": "Exterior-interior juggling", "category": "juggling", "isTrackable": false },
+  { "level": 3, "title": "Alternate", "description": "Alternating foot juggling", "category": "juggling", "isTrackable": false },
+  { "level": 4, "title": "Sequence2", "description": "2-move juggling sequence", "category": "juggling", "isTrackable": false },
+  { "level": 5, "title": "Sequence2Combo", "description": "Combo with 2-move sequence", "category": "juggling", "isTrackable": false },
+  { "level": 6, "title": "Sequence3", "description": "3-move juggling sequence", "category": "juggling", "isTrackable": false },
+  { "level": 7, "title": "Sequence3Combo", "description": "Combo with 3-move sequence", "category": "juggling", "isTrackable": false },
+  { "level": 8, "title": "Sequence4", "description": "4-move juggling sequence", "category": "juggling", "isTrackable": false },
+  { "level": 9, "title": "Ladder", "description": "Progressive juggling ladder", "category": "juggling", "isTrackable": false },
+  { "level": 10, "title": "1st Degree", "description": "CMD Juggling Degree 1", "category": "juggling", "isTrackable": false },
+  { "level": 11, "title": "2nd Degree", "description": "CMD Juggling Degree 2", "category": "juggling", "isTrackable": false },
+  { "level": 12, "title": "3rd Degree", "description": "CMD Juggling Degree 3", "category": "juggling", "isTrackable": false },
+  { "level": 13, "title": "Freestyle juggling creation", "description": "Player-designed freestyle juggling", "category": "juggling", "isTrackable": false },
+  { "level": 0, "title": "TrackFast", "description": "Sprint-based VO₂ test", "category": "fitness", "isTrackable": true }
+]

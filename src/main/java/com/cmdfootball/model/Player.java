@@ -49,4 +49,19 @@ public class Player {
 
     public List<String> getBadges() { return badges; }
     public void setBadges(List<String> badges) { this.badges = badges; }
+
+    public Object getVo2Max() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getVo2Max'");
+    }
+
+    public Object getJugglingLevel() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getJugglingLevel'");
+    }
+
+    public Object getTitle() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getTitle'");
+    }
 }

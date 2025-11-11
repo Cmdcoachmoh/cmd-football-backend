@@ -1,6 +1,5 @@
 package com.cmdfootball.controller;
 
-import com.cmdfootball.dto.PlayerGrowth;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import java.util.*;
@@ -12,10 +11,10 @@ public class DashboardController {
     @GetMapping("/metrics")
     public ResponseEntity<Map<String, Object>> getMetrics() {
         List<PlayerGrowth> growth = List.of(
-            new PlayerGrowth("Ali", 65),
-            new PlayerGrowth("Zara", 72),
-            new PlayerGrowth("Leo", 78),
-            new PlayerGrowth("Maya", 85)
+            new PlayerGrowth(),
+            new PlayerGrowth(),
+            new PlayerGrowth(),
+            new PlayerGrowth()
         );
 
         Map<String, Object> metrics = Map.of(

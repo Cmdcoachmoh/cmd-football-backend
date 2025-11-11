@@ -1,0 +1,40 @@
+# 🔹 Production Configuration
+server:
+  port: ${PORT:8080} # Fly.io sets PORT automatically
+
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+# 🔐 Security
+security:
+  jwt:
+    secret: ${JWT_SECRET}
+
+# 📧 Email (optional)
+mail:
+  username: ${MAIL_USERNAME}
+  password: ${MAIL_PASSWORD}
+  host: smtp.sendgrid.net
+  port: 587
+  protocol: smtp
+  properties:
+    mail.smtp.auth: true
+    mail.smtp.starttls.enable: true
+
+# 📊 Swagger (optional override)
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
