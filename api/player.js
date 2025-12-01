@@ -5,7 +5,8 @@ const { createServer } = require("@vercel/node");
 const app = express();
 
 app.get("/api/player/:id/growth", (req, res) => {
-  res.json({ name: "Player " + req.params.id, score: 85 });
+  res.json({ name: `Player ${req.params.id}`, score: 85 });
 });
 
 module.exports = createServer(app);
+
