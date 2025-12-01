@@ -1,6 +1,6 @@
 # 🔹 App Identity
 app = "cmd-football"
-primary_region = "yyz" # Toronto (closest to Regina)
+primary_region = "yyz"  # Toronto (closest to Regina)
 
 # 🔹 Build Configuration
 [build]
@@ -9,7 +9,8 @@ primary_region = "yyz" # Toronto (closest to Regina)
 # 🔹 Environment Variables
 [env]
   SPRING_PROFILES_ACTIVE = "prod"
-  # DATABASE_URL, JWT_SECRET, etc. can be added here or via `fly secrets set`
+  PORT = "8080"  # Ensures Fly sets the correct env var
+  # Add secrets via `fly secrets set DATABASE_URL=... JWT_SECRET=...`
 
 # 🔹 HTTP Service Configuration
 [http_service]
@@ -20,7 +21,10 @@ primary_region = "yyz" # Toronto (closest to Regina)
   min_machines_running = 1
   processes = ["app"]
 
-# 🔹 Optional: Add [metrics] block for observability
-# [metrics]
-#   port = 9091
-#   path = "/actuator/prometheus"
+  [[http_service.ports]]
+    port = 80
+    handlers = ["http"]
+
+  [[http_service.ports]]
+    port = 443
+    handlers = ["tls", "http"]

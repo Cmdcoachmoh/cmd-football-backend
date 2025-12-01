@@ -26,8 +26,8 @@ public class PlayerGrowthDTO {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setScore(Object score) {
+        this.score = (int) score;
     }
 
     public void setId(Long id) {
@@ -58,6 +58,16 @@ public class PlayerGrowthDTO {
     public void setElite(Object elite) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setElite'");
+    }
+
+    public void setPosition(String position) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setPosition'");
+    }
+
+    public void setTeamName(String name2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setTeamName'");
     }
 }
 

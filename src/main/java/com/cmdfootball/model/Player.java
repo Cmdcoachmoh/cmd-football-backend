@@ -64,4 +64,9 @@ public class Player {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getTitle'");
     }
+
+    public Object calculateGrowthScore() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calculateGrowthScore'");
+    }
 }

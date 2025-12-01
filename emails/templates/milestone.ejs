@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="<%= language %>">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body { font-family: Arial, sans-serif; color: #333; }
+    .header { text-align: center; }
+    .logo { width: 100px; margin-bottom: 10px; }
+    .content { padding: 20px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="<%= logoUrl %>" alt="CMD Logo" class="logo" />
+    <h2><%= language === 'fr' ? 'Félicitations!' : 'Congratulations!' %></h2>
+  </div>
+  <div class="content">
+    <p>
+      <%= language === 'fr'
+        ? `Bravo à ${playerName} pour avoir atteint le palier : ${milestone} le ${date}.`
+        : `Congratulations to ${playerName} for reaching the milestone: ${milestone} on ${date}.` %>
+    </p>
+    <p>
+      <%= language === 'fr'
+        ? 'Continuez à progresser avec CMD Football!'
+        : 'Keep growing with CMD Football!' %>
+    </p>
+  </div>
+</body>
+</html>
