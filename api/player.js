@@ -1,11 +1,18 @@
-// api/player.js
-const express = require("express");
-const { createServer } = require("@vercel/node");
+module.exports = async (req, res) => {
+  const { id } = req.query;
 
-const app = express();
+  // Mock DB for now
+  const players = [
+    { id: "1", name: "Adam Traoré", age: 12, jugllinglevel: "Basic Level", position: "Defender", team: "U12 Elite" },
+    { id: "2", name: "Yacouba Ouédraogo",age: 14, jugllinglevel: "Sequence 2", position: "Defender", team: "U14 Elite" },
+    { id: "3", name: "Mohamed Diabaté", age: 15, jugllinglevel: "Exterior Interior", position: "Defender", team: "U15 Elite" }
+  ];
 
-app.get("/api/player/:id/growth", (req, res) => {
-  res.json({ name: `Player ${req.params.id}`, score: 85 });
-});
+  const player = players.find((p) => p.id === id);
 
-module.exports = createServer(app);
+  if (!player) {
+    return res.status(404).json({ error: "Player not found" });
+  }
+
+  res.status(200).json(player);
+};
