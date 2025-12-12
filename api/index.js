@@ -1,8 +1,4 @@
-// api/index.js
-module.exports = (req, res) => {
-  res.json({
-    status: "ok",
-    message: "CMD Football Backend is running 🚀",
-    timestamp: new Date().toISOString()
-  });
-};
+export default function handler(req, res) {
+  res.status(200).json({ message: "CMD Football Backend API is running." });
+}
+
