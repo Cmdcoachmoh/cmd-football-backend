@@ -1,50 +1,56 @@
-const express = require("express");
-const cors = require("cors");
-const { createClient } = require("@supabase/supabase-js");
-require("dotenv").config();
+// index.js
+// CMD Football Backend – Root Entry Point
+
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
-
-// Initialize Supabase
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_KEY
-);
-
 app.use(cors());
 app.use(express.json());
 
+// ✅ Root route (optional)
+app.get("/", (req, res) => {
+  res.json({
+    message: "CMD Football Backend is running",
+    version: "1.0.0",
+    status: "ok",
+  });
+});
+
 // ✅ Health check
 app.get("/api/health", (req, res) => {
-  res.status(200).json({ status: "CMD Football Backend is healthy ✅" });
+  res.json({ status: "ok", timestamp: Date.now() });
 });
 
-// ✅ Get all players
+// ✅ Example Supabase connection (optional)
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
+
+// ✅ Example route using Supabase
 app.get("/api/players", async (req, res) => {
   const { data, error } = await supabase.from("players").select("*");
-  if (error) return res.status(500).json({ error: error.message });
-  res.status(200).json(data);
-});
 
-// ✅ Get single player by ID
-app.get("/api/player", async (req, res) => {
-  const { id } = req.query;
-  const { data, error } = await supabase.from("players").select("*").eq("id", id).single();
-  if (error) return res.status(404).json({ error: "Player not found" });
-  res.status(200).json(data);
-});
-
-// ✅ Create new player
-app.post("/api/players", async (req, res) => {
-  const { name, age, position, team } = req.body;
-  if (!name || !age || !position || !team) {
-    return res.status(400).json({ error: "Missing required fields" });
+  if (error) {
+    return res.status(500).json({ error: error.message });
   }
 
-  const { data, error } = await supabase.from("players").insert([{ name, age, position, team }]);
-  if (error) return res.status(500).json({ error: error.message });
-  res.status(201).json(data);
+  res.json(data);
 });
 
-// Export for Vercel
-module.exports = app;
+// ✅ Local development server
+// (Vercel ignores this — only used when running `npm start`)
+const PORT = process.env.PORT || 3000;
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`Backend running locally on port ${PORT}`);
+  });
+}
+
+export default app;
