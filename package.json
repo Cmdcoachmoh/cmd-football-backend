@@ -6,8 +6,8 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/index.ts",
-    "build": "echo 'No build step needed'",
-    "start": "node dist/index.js"
+  "build": "echo 'Using serverless functions'",
+  "start": "node api/index.js"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
