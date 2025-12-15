@@ -1,4 +1,3 @@
-// /api/players.js
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
@@ -9,17 +8,22 @@ const supabase = createClient(
 export default async function handler(req, res) {
   const { method } = req;
 
-  // ✅ GET /api/players → list all players
   if (method === "GET") {
-    const { data, error } = await supabase.from("players").select("*");
+    try {
+      const { data, error } = await supabase.from("players").select("*");
 
-    if (error) return res.status(500).json({ error: error.message });
-    return res.status(200).json(data);
+      if (error) {
+        console.error("Supabase error:", error.message);
+        return res.status(500).json({ error: error.message });
+      }
+
+      return res.status(200).json(data);
+    } catch (err) {
+      console.error("Unexpected error:", err.message);
+      return res.status(500).json({ error: "Unexpected server error" });
+    }
   }
 
   res.setHeader("Allow", ["GET"]);
   return res.status(405).json({ error: `Method ${method} Not Allowed` });
 }
-
-
-
