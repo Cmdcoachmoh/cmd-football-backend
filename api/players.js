@@ -2,7 +2,9 @@ import { supabase } from "../lib/supabase.js";
 
 export default async function handler(req, res) {
   try {
-    const { data, error } = await supabase.from("players").select("*");
+    const { data, error } = await supabase
+      .from("players") // Make sure this matches your Supabase table name exactly
+      .select("*");
 
     if (error) {
       console.error("Supabase error:", error.message);
