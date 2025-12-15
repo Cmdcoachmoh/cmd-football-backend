@@ -1,14 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",              // ✅ Enables clean relative imports
-    "paths": {
-      "lib/*": ["lib/*"]
-    },
     "target": "ES2020",
     "module": "CommonJS",
     "moduleResolution": "node",
-    "rootDir": "src",
-    "outDir": "dist",
     "esModuleInterop": true,
     "strict": true,
     "types": ["node"]
