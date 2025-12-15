@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon api/index.js",
-    "build": "echo 'Vercel builds serverless functions automatically'",
+    "build": "echo \"Vercel builds serverless functions automatically\"",
     "start": "node api/index.js"
   },
   "dependencies": {
@@ -30,6 +30,6 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   }
 }
